@@ -1,0 +1,69 @@
+<div class="container m-3">
+  <div class="container-fluid">
+    <div class="row">
+      <h2 class="col-10">Crear Cliente Nuevo</h2>
+      <div class="col-2">
+        <button class="btn btn-danger" (click)="cerrarModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <form (submit)="crearCliente()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="cliente.nombre"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="cuit">CUIT</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cuit"
+          name="cuit"
+          [(ngModel)]="cliente.cuit"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="cliente.email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="domicilio">Domicilio</label>
+        <input
+          type="text"
+          class="form-control"
+          id="domicilio"
+          name="domicilio"
+          [(ngModel)]="cliente.domicilio"
+        />
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono</label>
+        <input
+          type="text"
+          class="form-control"
+          id="telefono"
+          name="telefono"
+          [(ngModel)]="cliente.telefono"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="cerrarModal()">
+        Crear Cliente
+      </button>
+    </form>
+  </div>
+</div>

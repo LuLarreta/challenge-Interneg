@@ -1,0 +1,39 @@
+<div class="container m-3">
+  <div class="container-fluid">
+    <div class="row">
+      <h2 class="col-10">Crear Rubro Nuevo</h2>
+      <div class="col-2">
+        <button class="btn btn-danger" (click)="cerrarModal()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <form (submit)="crearRubro()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="rubro.nombre"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="codigo">Codigo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="codigo"
+          name="codigo"
+          [(ngModel)]="rubro.codigo"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="cerrarModal()">
+        Crear Rubro
+      </button>
+    </form>
+  </div>
+</div>

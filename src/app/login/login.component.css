@@ -1,0 +1,47 @@
+.form-control {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: solid 2px #515251c4;
+}
+
+.form-control:focus {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: solid 2px #ffc107;
+}
+
+p {
+  display: inline;
+}
+
+.login-container {
+  margin: 30px auto;
+  background-color: #ffffff;
+  padding: 4vh;
+  max-width: 540px;
+  box-shadow: 2px 0px 20px 10px rgba(0, 0, 0, 0.3);
+}
+
+.col-6 {
+  margin: 2vh 0;
+}
+
+.btn-inter {
+  background-color: #ffc107;
+
+  font-weight: bold;
+  font-size: larger;
+  border: none;
+}
+
+.btn-inter:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-inter:active {
+  opacity: 0.8;
+}

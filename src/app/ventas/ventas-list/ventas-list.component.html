@@ -1,0 +1,99 @@
+<div class="row abms m-0">
+    <div class="col-12 col-sm-3 col-md-2 p-0">
+      <div class="container-fluid p-0">
+        <div class="nav-abms sidebar">
+          <div class="position-sticky">
+            <ul class="nav nav-abms flex-column align-content-center py-3">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/clientes"> Clientes </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/rubros"> Rubros </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/productos"> Productos </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="/ventas"> Ventas </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/ventas/create">Nueva Venta</a>
+              </li>
+            </ul>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-9 col-md-10 py-3">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-lg-4 text-center">
+              <h2>Panel de ventas</h2>
+            </div>
+            <div class="col-8 col-lg-4 m-1">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Buscar ventas"
+                  [(ngModel)]="searchString"
+                  (keyup.enter)="buscarVentas()"
+                />
+                <button class="btn btn-primary mx-1" (click)="buscarVentas()">
+                  Buscar
+                </button>
+              </div>
+            </div>
+          </div>
+         
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Cliente</th>
+                  <th scope="col">Importe Total</th>
+                  <th scope="col">Herramientas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+
+                  <td>
+                    <button class="btn btn-info m-1" >
+                      <i class="fas fa-eye"></i><span> Ver</span>
+                    </button>
+                    <button class="btn btn-danger m-1" >
+                      <i class="fas fa-trash"></i><span> Eliminar</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="pagination justify-content-center align-items-center">
+          <button
+            class="btn btn-primary"
+            (click)="paginaAnterior()"
+            [disabled]="currentPage === 1"
+          >
+            <span>&lt;</span>
+          </button>
+          <span class="px-1">Página {{ currentPage }} de {{ totalPages }}</span>
+          <button
+            class="btn btn-primary"
+            (click)="siguientePagina()"
+            [disabled]="currentPage === totalPages"
+          >
+            <span>&gt;</span>
+          </button>
+        </div>
+      </div>
+
+</div>

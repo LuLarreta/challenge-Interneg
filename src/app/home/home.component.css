@@ -1,0 +1,24 @@
+.btn-inter {
+    background-color: #ffc107;
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: larger;
+    border: none;
+  }
+  
+  .btn-inter:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-inter:active {
+    opacity: 0.8;
+  }
+
+  button.btn.btn-warning {
+    width: 100%;
+}
+
+  
+  

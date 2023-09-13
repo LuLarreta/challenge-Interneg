@@ -1,0 +1,38 @@
+<div class="container p-3">
+    <div class="container-fluid">
+      <h2>¿Estás seguro que desea eliminar "{{ producto.nombre }}"?</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 border-bottom">
+          <p class="m-0 pt-1">Codigo:</p>
+          <p>{{ producto.codigo }}</p>
+        </div>
+        <div class="col-12 border-bottom">
+            <p class="m-0 pt-1">Precio:</p>
+            <p>{{ producto.precio }}</p>
+          </div>
+          <div class="col-12">
+            <p class="m-0 pt-1">Rubro:</p>
+            <p>{{ producto.rubro ? producto.rubro.nombre : 'Sin especificar' }}</p>
+          </div>
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            (click)="cancelarEliminacion()"
+          >
+            <i class="fas fa-times"></i><span> Cancelar</span>
+          </button>
+        </div>
+        <div class="col-4">
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="confirmarEliminacion()"
+          >
+            <i class="fas fa-trash"></i><span> Eliminar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

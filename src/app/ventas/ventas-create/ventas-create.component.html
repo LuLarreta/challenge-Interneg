@@ -1,0 +1,124 @@
+<div class="row abms m-0">
+  <div class="col-12 col-sm-3 col-md-2 p-0">
+    <div class="container-fluid p-0">
+      <div class="nav-abms sidebar">
+        <div class="position-sticky">
+          <ul class="nav nav-abms flex-column align-content-center py-3">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/clientes"> Clientes </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/rubros"> Rubros </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/productos"> Productos </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/ventas"> Ventas </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/ventas/create"
+                >Nueva Venta</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-9 col-md-10 py-3">
+    <div class="container-fluid">
+      <h2>Nueva venta</h2>
+
+      <form (ngSubmit)="crearVenta()">
+        <div class="row align-items-center justify-content-center">
+
+          <div class="col-12 col-lg-8">
+            <div class="col-12 m-1">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Buscar productos"
+                  [(ngModel)]="searchString"
+                  (keyup)="buscarProductos()"
+                />
+                <button class="btn btn-primary mx-1">Buscar</button>
+              </div>
+            </div>
+
+            <ul *ngIf="productos.length > 0" class="list-group">
+              <li
+                class="list-group-item"
+                *ngFor="let producto of productos"
+                (click)="agregarProducto(producto)"
+              >
+                {{ producto.nombre }}
+              </li>
+            </ul>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Cant</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio Unitario</th>
+                    <th scope="col">Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <td>
+                      <label for="cantidad">Cantidad:</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="cantidad"
+                        name="cantidad"
+                      />
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Buscar Cliente"
+              />
+              <button class="btn btn-primary mx-1">Buscar</button>
+            </div>
+            <div class="form-group">
+              <label for="fecha">Fecha:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="fecha"
+                name="fecha"
+                [(ngModel)]="venta.fecha"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="observaciones">Observaciones:</label>
+              <textarea
+                class="form-control"
+                id="observaciones"
+                name="observaciones"
+                [(ngModel)]="venta.observaciones"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Crear Venta</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

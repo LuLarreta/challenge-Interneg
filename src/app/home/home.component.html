@@ -1,0 +1,42 @@
+<div class="container">
+<div *ngIf="isLoggedIn; else invitationMessage">
+    <h2 class="text-center m-3">Bienvenido al Panel de Administrador</h2>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 my-2">
+                    <button routerLink="/clientes" class="btn btn-warning">
+                    <i class="fa fa-user fa-2x"></i>
+                    <p>Panel de Clientes</p></button>
+                </div>
+                <div class="col-12 col-md-4 my-2">
+                    <button routerLink="/rubros"  class="btn btn-warning">
+                    <i class="fa fas fa-tags fa-2x"></i>
+                    <p>Panel de Rubros</p></button>
+                </div>
+                <div class="col-12 col-md-4 my-2" >
+                    <button routerLink="/productos" class="btn btn-warning">
+                    <i class="fas fa-box fa-2x"></i>
+                    <p>Panel de Productos</p></button>
+                </div>
+                <div class="col-12 col-md-4 my-2">
+                    <button routerLink="/ventas"  class="btn btn-warning">
+                    <i class="fas fa-file-invoice fa-2x"></i>
+                    <p>Panel de Ventas</p></button>
+                </div>
+                <div class="col-12 col-md-4 my-2" >
+                    <button routerLink="/ventas/create"  class="btn btn-warning">
+                    <i class="fas fa-money-bill fa-2x"></i>
+                    <p>Nueva Venta</p></button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <ng-template #invitationMessage>
+    <h2 class="text-center m-3">Para acceder al panel de administrador, ingrese sus credenciales</h2>
+    <button type="button" class="btn btn-inter" routerLink="/login"
+            >Ingresar Credenciales</button>
+  </ng-template>
+  
+</div>

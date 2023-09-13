@@ -1,0 +1,13 @@
+.bg-inter {
+    background-color: #ffc107;
+}
+
+.text-dark {
+    color: black;
+}
+
+@media (min-width: 576px) {
+    .navbar {
+        height: 10vh;
+    }
+  }
